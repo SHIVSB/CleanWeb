@@ -1,0 +1,76 @@
+<!--<h1><%= title%></h1>-->
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6 bg-green-400">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-semibold text-xl tracking-tight">CleanWeb</span>
+    </div>
+    <div class="block lg:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+    </div>
+</nav>
+
+<div class="flex justify-center items-center w-screen h-screen bg-gray-800">
+    <!-- COMPONENT CODE -->
+    <div class="container mx-auto mt-10 mb-10 lg:mb-40 lg:px-20">
+        <div class="relative w-full my-4 lg:w-9/12 mr-auto rounded-2xl shadow-2xl">
+            <img alt="Card" src="https://cdn.pixabay.com/photo/2015/06/08/15/06/woman-801872_960_720.jpg" class="max-w-full rounded-lg shadow-lg"/>
+        </div>
+        <div class="relative w-full lg:-mt-96 lg:w-3/6 p-8 ml-auto bg-blue-800 rounded-2xl z-50">
+            <h1><b>User Profile .....</b></h1>
+            <div class="flex flex-col text-white">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-indigo-200 fill-current w-12 h-12 md:w-16 md:h-16" viewBox="0 0 24 24"><path d="M6.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L9.758 4.03c0 0-.218.052-.597.144C8.97 4.222 8.737 4.278 8.472 4.345c-.271.05-.56.187-.882.312C7.272 4.799 6.904 4.895 6.562 5.123c-.344.218-.741.4-1.091.692C5.132 6.116 4.723 6.377 4.421 6.76c-.33.358-.656.734-.909 1.162C3.219 8.33 3.02 8.778 2.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C2.535 17.474 4.338 19 6.5 19c2.485 0 4.5-2.015 4.5-4.5S8.985 10 6.5 10zM17.5 10c-.223 0-.437.034-.65.065.069-.232.14-.468.254-.68.114-.308.292-.575.469-.844.148-.291.409-.488.601-.737.201-.242.475-.403.692-.604.213-.21.492-.315.714-.463.232-.133.434-.28.65-.35.208-.086.39-.16.539-.222.302-.125.474-.197.474-.197L20.758 4.03c0 0-.218.052-.597.144-.191.048-.424.104-.689.171-.271.05-.56.187-.882.312-.317.143-.686.238-1.028.467-.344.218-.741.4-1.091.692-.339.301-.748.562-1.05.944-.33.358-.656.734-.909 1.162C14.219 8.33 14.02 8.778 13.81 9.221c-.19.443-.343.896-.468 1.336-.237.882-.343 1.72-.384 2.437-.034.718-.014 1.315.028 1.747.015.204.043.402.063.539.017.109.025.168.025.168l.026-.006C13.535 17.474 15.338 19 17.5 19c2.485 0 4.5-2.015 4.5-4.5S19.985 10 17.5 10z"/></svg>
+                </div>
+                <p class="text-white my-5 px-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt arcu diam,
+                    eu feugiat felis fermentum id. Curabitur vitae nibh viverra, auctor turpis sed, scelerisque ex.
+                </p>
+                <div class="flex justify-between pl-2">
+                    <h3 class="font-bold text-2xl">By : <%= user.name%></h3>
+                    <h3 class="font-bold text-2xl">Email : <%= user.email%></h3>
+                    <i class="fas fa-quote-right text-2xl" />
+                </div>
+                <ul>
+                    <% if(locals.user){%>
+                        <button type="submit"
+                                class="w-full text-center py-3 rounded bg-green-400 text-white hover:bg-green-dark focus:outline-none my-1">
+                            <a href="/users/sign-out">Sign Out</a>
+                        </button>
+                    <% }else{%>
+                        <button>
+                            <a href="/users/sign-in">Sign In</a>
+                        </button>
+                        <button>
+                            <a href="/users/sign-up">Sign Up</a>
+                        </button>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+    <!-- COMPONENT CODE -->
+</div>
+
+
+<!--<header>-->
+<!--    Page Header-->
+<!--    <ul>-->
+<!--        <% if(locals.user){%>-->
+<!--            <li><%= user.name%></li>-->
+<!--            <li>-->
+<!--                <a href="/users/sign-out">Sign Out</a>-->
+<!--            </li>-->
+<!--        <% }else{%>-->
+<!--            <li>-->
+<!--                <a href="/users/sign-in">Sign In</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <a href="/users/sign-up">Sign Up</a>-->
+<!--            </li>-->
+<!--        <% } %>-->
+<!--    </ul>-->
+<!--</header>-->
+
+<!--<p>User : <%= user.name%></p>-->
+<!--<p>Email : <%= user.email%></p>-->

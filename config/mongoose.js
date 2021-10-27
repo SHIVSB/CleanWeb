@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 //connecting to the database
-mongoose.connect('mongodb://localhost/second_project_db');
+mongoose.connect('mongodb://localhost/CleanWeb_db');
 
 //chek if was successful
 const db = mongoose.connection;

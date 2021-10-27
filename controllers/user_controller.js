@@ -1,18 +1,27 @@
 const Users = require('../models/users');
 
 module.exports.profile = function(req,res){
-    return res.render('users',{
-        title:"Users Section"
-    });
-}
-
-module.exports.signUp = function (req,res){
-    return res.render('user_sign_up',{
-        title: "CleanWeb | Sign Up ......."
+    return res.render('user_profile',{
+        title: 'User Profile'
     })
 }
 
+module.exports.signUp = function (req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
+
+    return res.render('user_sign_up',{
+        title: "CleanWeb | Sign Up ......."
+    })
+
+}
+
 module.exports.signIn = function(req,res){
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
+
     return res.render('user_sign_in',{
         title:"CleanWeb | Sign In ......."
     })
@@ -43,5 +52,10 @@ module.exports.create = function(req,res){
 }
 //sign in and create a session for the user
 module.exports.createSession = function (req,res){
+    return res.redirect('/');
+}
 
+module.exports.destroySession = function(req,res){
+    req.logout();
+    return res.redirect('/');
 }

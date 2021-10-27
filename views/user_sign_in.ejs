@@ -1,6 +1,59 @@
-<h1><%= title%></h1>
-<form>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="password" name="password" placeholder="Password"  required>
-    <input type="submit" value="Sign In">
-</form>
+<head>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+
+<!--<form action="/users/create-session" method="POST">-->
+<!--    <input type="email" name="email" placeholder="Email" required>-->
+<!--    <input type="password" name="password" placeholder="Password"  required>-->
+<!--    <input type="submit" value="Sign In">-->
+<!--</form>-->
+
+<body>
+<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6 bg-green-400">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <span class="font-semibold text-xl tracking-tight">CleanWeb</span>
+    </div>
+    <div class="block lg:hidden">
+        <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+        </button>
+    </div>
+</nav>
+<div class="font-sans min-h-screen antialiased bg-gray-900 pt-24 pb-5">
+<!--    <li><a href="/users/sign-up"> Sign Up</a></li>-->
+<!--    <li><a href="/users/sign-out"> Sign Out</a></li>-->
+    <div class="flex flex-col justify-center sm:w-96 sm:m-auto mx-5 mb-5 space-y-8">
+        <h1 class="font-bold text-center text-4xl text-yellow-500">Clean<span class="text-blue-500">Web</span></h1>
+        <form action="/users/create-session" method="POST">
+            <div class="flex flex-col bg-white p-10 rounded-lg shadow space-y-6">
+                <h1 class="font-bold text-xl text-center">Sign in to your account</h1>
+
+                <div class="flex flex-col space-y-1">
+                    <input type="email" name="email" class="border-2 rounded px-3 py-2 w-full focus:outline-none focus:border-blue-400 focus:shadow" placeholder="Email" />
+                </div>
+
+                <div class="flex flex-col space-y-1">
+                    <input type="password" name="password" class="border-2 rounded px-3 py-2 w-full focus:outline-none focus:border-blue-400 focus:shadow" placeholder="Password" />
+                </div>
+
+                <div class="relative">
+                    <input type="checkbox" name="remember" id="remember" checked class="inline-block align-middle" />
+                    <label class="inline-block align-middle" for="remember">Remember me</label>
+                </div>
+
+                <div class="flex flex-col-reverse sm:flex-row sm:justify-between items-center">
+                    <a href="#" class="inline-block text-blue-500 hover:text-blue-800 hover:underline">Forgot your password?</a>
+                    <button type="submit" class="bg-blue-500 text-white font-bold px-5 py-2 rounded focus:outline-none shadow hover:bg-blue-700 transition-colors" value="Sign-in">Sign In</button>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white font-bold px-5 py-2 rounded focus:outline-none shadow hover:bg-blue-700 transition-colors" value="Sign-up">Sign Up</button>
+
+            </div>
+        </form>
+        <div class="flex justify-center text-gray-500 text-sm">
+            <p>&copy;2021. All right reserved.</p>
+        </div>
+    </div>
+</div>
+</body>
+
